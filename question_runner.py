@@ -1,23 +1,9 @@
 import os
 import datetime
-from dotenv import load_dotenv
 from openai import OpenAI
 
-# Load environment variables
-load_dotenv()
-
 # Initialize OpenAI client
-client = OpenAI()
-
-# Check for required API keys
-missing = []
-if not os.environ.get('OPENAI_API_KEY'):
-    missing.append('OPENAI_API_KEY')
-if not os.environ.get('FRED_API_KEY'):
-    missing.append('FRED_API_KEY')
-
-if missing:
-    raise ValueError(f"Missing required API keys: {', '.join(missing)}")
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
 # Main callable workflow function
