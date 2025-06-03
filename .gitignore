@@ -146,3 +146,5 @@ examples/multimodal/.local_cache/*
 # VS Code files
 .vscode/
 .cursorignore
+.env
+.streamlit/
